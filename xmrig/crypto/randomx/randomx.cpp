@@ -82,11 +82,6 @@ RandomX_ConfigurationLoki::RandomX_ConfigurationLoki()
 	RANDOMX_FREQ_CBRANCH = 16;
 }
 
-RandomX_ConfigurationV::RandomX_ConfigurationV()
-{
-	ArgonSalt = "RandomV\x03";
-}
-
 RandomX_ConfigurationArqma::RandomX_ConfigurationArqma()
 {
 	ArgonIterations = 1;
@@ -95,6 +90,37 @@ RandomX_ConfigurationArqma::RandomX_ConfigurationArqma()
 	ProgramCount = 4;
 	ScratchpadL2_Size = 131072;
 	ScratchpadL3_Size = 262144;
+}
+
+RandomX_ConfigurationSafex::RandomX_ConfigurationSafex()
+{
+	ArgonSalt = "RandomSFX\x01";
+}
+
+RandomX_ConfigurationV::RandomX_ConfigurationV()
+{
+	ArgonSalt = "RandomV\x03";
+}
+
+RandomX_ConfigurationKlaro::RandomX_ConfigurationKlaro()
+{
+RANDOMX_FREQ_IADD_RS = 15;
+RANDOMX_FREQ_IADD_M = 2;
+RANDOMX_FREQ_ISUB_M = 2;
+RANDOMX_FREQ_IXOR_R = 5;
+RANDOMX_FREQ_IXOR_M = 2;
+RANDOMX_FREQ_IROR_R = 2;
+
+RANDOMX_FREQ_FADD_R = 20;
+RANDOMX_FREQ_FADD_M = 10;
+RANDOMX_FREQ_FSUB_R = 20;
+RANDOMX_FREQ_FSUB_M = 10;
+RANDOMX_FREQ_FMUL_R = 20;
+RANDOMX_FREQ_FMUL2I_R = 20;
+RANDOMX_FREQ_FDIV_M = 7;
+RANDOMX_FREQ_FSQRT_R = 16;
+RANDOMX_FREQ_CBRANCH = 16;
+
 }
 
 RandomX_ConfigurationBase::RandomX_ConfigurationBase()
@@ -251,7 +277,8 @@ void RandomX_ConfigurationBase::Apply()
 	INST_HANDLE(FSUB_M, FSUB_R);
 	INST_HANDLE(FSCAL_R, FSUB_M);
 	INST_HANDLE(FMUL_R, FSCAL_R);
-	INST_HANDLE(FDIV_M, FMUL_R);
+	INST_HANDLE(FMUL2I_R, FMUL_R); //klaro
+	INST_HANDLE(FDIV_M, FMUL2I_R); //klaro
 	INST_HANDLE(FSQRT_R, FDIV_M);
 	INST_HANDLE(CBRANCH, FSQRT_R);
 	INST_HANDLE(CFROUND, CBRANCH);
