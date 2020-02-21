@@ -287,6 +287,7 @@ RandomX_ConfigurationV RandomX_VConfig;
 RandomX_ConfigurationWownero RandomX_WowneroConfig;
 RandomX_ConfigurationLoki RandomX_LokiConfig;
 RandomX_ConfigurationArqma RandomX_ArqmaConfig;
+RandomX_ConfigurationKlaro RandomX_KlaroConfig;
 
 RandomX_ConfigurationBase RandomX_CurrentConfig;
 
