@@ -92,11 +92,6 @@ RandomX_ConfigurationArqma::RandomX_ConfigurationArqma()
 	ScratchpadL3_Size = 262144;
 }
 
-RandomX_ConfigurationSafex::RandomX_ConfigurationSafex()
-{
-	ArgonSalt = "RandomSFX\x01";
-}
-
 RandomX_ConfigurationV::RandomX_ConfigurationV()
 {
 	ArgonSalt = "RandomV\x03";
